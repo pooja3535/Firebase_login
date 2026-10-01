@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'signUp.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({
@@ -47,13 +48,30 @@ class MyHomePage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              TextFormField(
-                  decoration: InputDecoration(border: OutlineInputBorder())),
               SizedBox(
-                height: 20,
+                height: 60,
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.mail_outline),
+                        //prefixText: 'email@gmail.com',
+                        hintText: 'email@gmail.com',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15)))),
               ),
-              TextFormField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 60,
+                child: TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock_outline_rounded),
+                      hintText: 'password',
+                      suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -95,7 +113,7 @@ class MyHomePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       'or continue with',
-                      style: TextStyle(color: Colors.black, fontSize: 14.0),
+                      style: TextStyle(color: Colors.black, fontSize: 18.0),
                     ),
                   ),
                   Expanded(
@@ -112,11 +130,37 @@ class MyHomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  OutlinedButton(onPressed: () {}, child: Text('Google')),
+                  OutlinedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.google,
+                            color: Colors.red,
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('Google'),
+                        ],
+                      )),
                   SizedBox(
                     width: 10,
                   ),
-                  OutlinedButton(onPressed: () {}, child: Text('Apple')),
+                  OutlinedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.apple,
+                            color: Colors.blueGrey,
+                          ),
+                          SizedBox(
+                            width: 5.0,
+                          ),
+                          Text('Apple'),
+                        ],
+                      )),
                 ],
               ),
               SizedBox(
